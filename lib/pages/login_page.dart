@@ -1,0 +1,29 @@
+import 'package:e_shopping/app_state/app_state.dart';
+import 'package:flutter/material.dart'; 
+import 'package:provider/provider.dart';
+
+class LoginPage extends StatelessWidget {
+  const LoginPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Login'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Provider.of<AppState>(context, listen: false).isLoggedIn = true;
+              },
+              child: Text('Log in'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
